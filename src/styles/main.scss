@@ -1,0 +1,8 @@
+/* ---------------- utils ---------------- */
+@import "./scss/helpers/variables";
+@import "./scss/base/reset";
+@import "./scss/helpers/mixins";
+
+/* --------------- layouts --------------- */
+// Home layout
+@import "./scss/layouts/home/drafts/draftNavBar";
