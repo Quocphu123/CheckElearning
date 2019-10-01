@@ -8,13 +8,13 @@ import Navbar from "./components/layouts/Navbar";
 import Category from "./components/Category";
 import CourseItem from "./components/CourseItem";
 import { getCourse } from "./api/courseAPI";
-
+import { connect } from "react-redux";
 
 
 export default class MasterRouter extends Component {
 
   componentDidMount() {
-    getCourse()
+    this.props.getCourse()
   }
   render() {
     return (
@@ -30,6 +30,7 @@ export default class MasterRouter extends Component {
     );
   }
 }
+
 
 
 

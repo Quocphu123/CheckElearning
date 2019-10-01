@@ -1,20 +1,7 @@
-import * as Types from "../constants/actionTypes"
+import axios from "axios";
 
-import api from "./index"
+const courseAPI = axios.create({
+    baseURL : 'http://elearning0706.cybersoft.edu.vn/QuanLyKhoaHoc/api'
+})
 
-export const getCourse = () => {
-    // Đây là mapDispatchToProps
-    return (dispatch) => {
-        api
-            .get("QuanLyKhoaHoc/LayDanhSachKhoaHoc?maKhoaHoc=GP01")
-            .then(res => {
-                // Có applyMiddleware(thunk) là sẽ đợi api chạy xong mới dispatch lên store
-                dispatch({
-                    type: Types.GET_COURSE,
-                    payload: res.data,
-                })
-
-            })
-            .catch(err => console.log(err))
-    }
-}
+export default courseAPI
